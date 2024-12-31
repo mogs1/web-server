@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  httpd:
+    build:
+      context: ./httpd
+      dockerfile: dockerfile_httpd
+    ports:
+      - "8080:80"
+    container_name: httpd_server
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: dockerfile_nginx
+    ports:
+      - "8081:80"
+    container_name: nginx_server
